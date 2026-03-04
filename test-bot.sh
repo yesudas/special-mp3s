@@ -3,7 +3,7 @@
 # Bot Honeypot Test Script
 # Tests the bot.php honeypot with various user agents
 
-URL="https://your-website.com/special-mp3s/bot.php"
+URL="https://yourdomain.com/bot.php"
 
 echo "Testing Bot Honeypot at: $URL"
 echo "=========================================="

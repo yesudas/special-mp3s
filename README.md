@@ -60,10 +60,12 @@ https://wordofgod.in/special-mp3s/
 - **Add to Home Screen**: Install as a native-like app on any device
 - **Fast Loading**: Cached resources for instant page loads
 
-### �🔒 Security
+### 🔒 Security
 - **Path Traversal Protection**: Uses `basename()` to prevent directory attacks
 - **File Type Validation**: Only MP3 files can be downloaded
 - **Safe Includes**: Modular footer and component includes
+- **Bot Honeypot**: Detects and logs bot activity with hidden trap page
+- **Bot Activity Monitoring**: Tracks malicious bots and scrapers for security analysis
 
 ## 📁 File Structure
 
@@ -78,6 +80,9 @@ special-mp3s/
 ├── footer-links.php    # Quick links section
 ├── copyright.php       # Copyright information
 ├── counter.php         # Visitor counter with session tracking
+├── bot.php             # Bot honeypot trap for security monitoring
+├── bot.log             # Bot activity log (auto-generated)
+├── test-bot.sh         # Bot honeypot test script
 ├── style.css           # Responsive styles
 ├── player.js           # Player functionality
 ├── counter.txt         # Visitor count storage
@@ -179,6 +184,12 @@ special-mp3s/
    - App works offline after installation
    - Update `pwa/manifest.json` to customize app name and colors
 
+5. **Monitor Bot Activity**:
+   - Hidden honeypot link automatically included in footer
+   - Check `bot.log` file for bot detection records
+   - Each entry includes timestamp, unique ID, IP, user-agent, and referer
+   - Test honeypot using the included `test-bot.sh` script
+
 ## 🎯 Features Explained
 
 ### Automatic Album Name Formatting
@@ -229,6 +240,32 @@ special-mp3s/
 - **Smooth Animations**: GPU-accelerated transitions
 - **Fast Loading**: Minimal CSS/JS, optimized for mobile networks
 
+### Bot Honeypot
+- **Hidden Trap Page**: Invisible link in footer to catch bots and scrapers
+- **Activity Logging**: Records bot visits with unique ID, IP, user-agent, and referer
+- **Duplicate Prevention**: Each bot logged only once (based on IP + user-agent hash)
+- **Security Monitoring**: Helps identify malicious crawlers and automated attacks
+- **Test Script Included**: `test-bot.sh` simulates various bots for testing
+
+**How It Works:**
+- A hidden link in `footer-links.php` points to `bot.php`
+- Link is invisible to users (CSS: `display:none`) but accessible to bots
+- When accessed, bot details are logged to `bot.log`
+- Legitimate users never see or access this page
+- Use for security analysis and bot pattern detection
+
+**Testing the Honeypot:**
+```bash
+# Run the test script to simulate bot visits
+./test-bot.sh
+
+# Or test manually with curl
+curl -A "Googlebot/2.1" https://yourdomain.com/special-mp3s/bot.php
+
+# Check the log file
+cat bot.log
+```
+
 ## 🌐 Browser Compatibility
 
 Works on all modern browsers:
@@ -246,6 +283,7 @@ Works on all modern browsers:
 - **File Type Validation**: Only MP3 files can be downloaded/played
 - **Safe Includes**: Modular PHP includes prevent code injection
 - **Bot Detection**: Filters malicious bot traffic from visitor count
+- **Bot Honeypot**: Hidden trap page logs bot activity for security analysis
 - **Input Sanitization**: All user input sanitized with `htmlspecialchars()` and `urlencode()`
 - **Session Security**: PHP sessions used for visitor tracking (no cookies exposed)
 
@@ -355,6 +393,14 @@ $version = "2026.02"; // Change to your version
 3. Clear cache: DevTools → Application → Storage → Clear site data
 4. Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
 
+### Bot Honeypot Not Logging
+1. Check write permissions on project directory: `chmod 755 .`
+2. Ensure PHP has permission to create `bot.log` file
+3. Test honeypot with test script: `./test-bot.sh`
+4. Check server error logs if bot.log not created
+5. Verify bot.php is accessible: visit `http://yourdomain.com/bot.php`
+6. View log contents: `cat bot.log` or check via FTP/File Manager
+
 ## 📞 Contact & Support
 
 For questions, issues, or contributions:
@@ -377,7 +423,7 @@ Feel free to use, modify, and distribute this project for personal or commercial
 
 ---
 
-**Version**: 2026.02  
-**Last Updated**: February 14, 2026  
+**Version**: 2026.03  
+**Last Updated**: March 4, 2026  
 **Maintained by**: Word of God Team  
-**Features**: Music Player, PWA, Offline Support, Visitor Tracking, SEO Optimized
+**Features**: Music Player, PWA, Offline Support, Visitor Tracking, Bot Honeypot, SEO Optimized
