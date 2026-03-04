@@ -1,6 +1,5 @@
 <?php
 
-// Bible Concordance Web Application
 include 'counter.php';
 
 $version = "2026.02";

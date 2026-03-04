@@ -16,7 +16,7 @@
             </div>
             
             <!-- Quick Links -->
-                        <div class="footer-section footer-links">
+            <div class="footer-section footer-links">
                 <a href="https://wordofgod.in/good-news-collections/" target="_blank" class="footer-link">
                     <i class="bi bi-box-seam me-1"></i> Good News Collections
                 </a>
@@ -60,5 +60,10 @@
                 </p>
             </div>
 
+            <div>
+                <p class="mb-0">
+                    Note: The Healing-Bible-Tablet albums from the languages Badaga, Hindi, Kannada, Malayalam, Marathi and Telugu are published by www.HealingBibleVerse.com. We are including them here at one place and streaming free of cost.
+                </p>
+            </div>
         </div>
     </footer>

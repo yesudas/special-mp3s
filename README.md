@@ -16,10 +16,12 @@ https://wordofgod.in/special-mp3s/
 - **Sequential Playback**: Tracks play in the order of filename
 
 ### 📚 Content Organization
-- **Multi-Language Support**: Easy navigation between different languages (English, Tamil, etc.)
+- **Multi-Language Support**: Easy navigation between different languages (Badaga, English, Hindi, Kannada, Malayalam, Marathi, Tamil, Telugu)
 - **Album Organization**: Browse albums within each language
 - **Automatic Name Formatting**: Hyphens removed from folder/file names for better display
 - **Natural Sorting**: Files sorted in natural order (1, 2, 10 vs 1, 10, 2)
+
+> **Note**: The Healing-Bible-Tablet albums from the languages Badaga, Hindi, Kannada, Malayalam, Marathi and Telugu are published by [www.HealingBibleVerse.com](https://www.HealingBibleVerse.com). We are including them here at one place and streaming free of cost.
 
 ### ⬇️ Download Functionality
 - **Individual Track Downloads**: Download any MP3 file with a single click
@@ -89,14 +91,26 @@ special-mp3s/
 │   ├── icon-192.png    # App icon 192x192
 │   └── icon-512.png    # App icon 512x512
 └── languages/          # MP3 files organized by language/album
+    ├── Badaga/
+    │   └── Healing-Bible-Tablet/
     ├── English/
     │   └── Healing-Bible-Tablet/
-    └── Tamil/
-        ├── 1000-Praises/
-        ├── Asuththa-Aavigalai-Kattungal/
-        ├── Healing-Bible-Tablet/
-        ├── Jesus-Life-History/
-        └── Yesuvin-Raththathin-Thuthigal/
+    ├── Hindi/
+    │   └── Healing-Bible-Tablet/
+    ├── Kannada/
+    │   └── Healing-Bible-Tablet/
+    ├── Malayalam/
+    │   └── Healing-Bible-Tablet/
+    ├── Marathi/
+    │   └── Healing-Bible-Tablet/
+    ├── Tamil/
+    │   ├── 1000-Praises/
+    │   ├── Asuththa-Aavigalai-Kattungal/
+    │   ├── Healing-Bible-Tablet/
+    │   ├── Jesus-Life-History/
+    │   └── Yesuvin-Raththathin-Thuthigal/
+    └── Telugu/
+        └── Healing-Bible-Tablet/
 ```
 
 ## 🚀 Setup Instructions
