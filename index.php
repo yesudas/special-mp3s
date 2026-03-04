@@ -2,7 +2,7 @@
 
 include 'counter.php';
 
-$version = "2026.02";
+$version = "2026.03.04";
 
 // Main page - Language selection
 $languagesPath = __DIR__ . '/languages';

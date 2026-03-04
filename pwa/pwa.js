@@ -18,16 +18,26 @@
         // Listen for beforeinstallprompt event
         window.addEventListener('beforeinstallprompt', (e) => {
             console.log('beforeinstallprompt event fired');
+            
+            // Check if already installed or user chose "Don't show again"
+            if (dontShowAgain) {
+                console.log('Banner suppressed: User clicked "Don\'t show again". Clear localStorage to reset.');
+                return;
+            }
+            
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                console.log('Banner suppressed: App already installed in standalone mode');
+                return;
+            }
+            
+            // Only prevent default if we're going to show our custom banner
             e.preventDefault();
             deferredPrompt = e;
             
-            // Check if already installed or user chose "Don't show again"
-            if (!dontShowAgain && !window.matchMedia('(display-mode: standalone)').matches) {
-                // Show banner after 2 seconds
-                setTimeout(() => {
-                    pwaInstallBanner.classList.add('show');
-                }, 2000);
-            }
+            // Show banner after 2 seconds
+            setTimeout(() => {
+                pwaInstallBanner.classList.add('show');
+            }, 2000);
         });
 
         // Install button click handler

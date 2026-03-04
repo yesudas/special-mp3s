@@ -49,7 +49,7 @@
             </div>
 
             <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none;" aria-hidden="true">
-                <a href="../bot.php" tabindex="-1">.</a>
+                <a href="bot.php" tabindex="-1">.</a>
             </div>
 
             <!-- Copyright -->
